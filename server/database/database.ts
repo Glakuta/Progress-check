@@ -1,6 +1,6 @@
 import { Pool, Client } from "pg";
 
-const pool = new Pool({
+export const pool = new Pool({
   user: process.env.DATABASE_USER,
   host: process.env.DATABASE_HOST,
   database: process.env.DATABASE_NAME,
@@ -10,7 +10,7 @@ const pool = new Pool({
 
 console.log(await pool.query("SELECT NOW()"));
 
-const client = new Client({
+export const client = new Client({
   user: process.env.DATABASE_USER,
   host: process.env.DATABASE_HOST,
   database: process.env.DATABASE_NAME,
